@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5636323720920398031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5937358103286292423}
+  - component: {fileID: 5037571243289432873}
+  - component: {fileID: 8771516813053811782}
+  m_Layer: 0
+  m_Name: Goal Hole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5937358103286292423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636323720920398031}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.36, y: -0.38, z: 2.188}
+  m_LocalScale: {x: 0.6263545, y: 0.6263545, z: 0.6263545}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7889381149083114144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5037571243289432873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636323720920398031}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.29566807, z: 1}
+  m_Center: {x: 0, y: 0.29075176, z: 0}
+--- !u!114 &8771516813053811782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636323720920398031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353b4494cb58c1c4eaa5f0736f228be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoalHole
+  Canvas: {fileID: 0}
+--- !u!1001 &7707364474725760331
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.447041
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18547258
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.0340416
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      propertyPath: m_Name
+      value: mesa golf1 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5937358103286292423}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5233112405309087440, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 66027127034856169}
+  m_SourcePrefab: {fileID: 100100000, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+--- !u!1 &2479740832536404891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5233112405309087440, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+  m_PrefabInstance: {fileID: 7707364474725760331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &66027127034856169
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479740832536404891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2124705421725058983, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+--- !u!4 &7889381149083114144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c0d9d1df7c145543be97b9c801d4aac, type: 3}
+  m_PrefabInstance: {fileID: 7707364474725760331}
+  m_PrefabAsset: {fileID: 0}
