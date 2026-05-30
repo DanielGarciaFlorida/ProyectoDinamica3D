@@ -5,7 +5,9 @@ public class BallShooter : MonoBehaviour
 {
     // Referencias
     [SerializeField] private BallController ball;
-    [SerializeField] private Transform golfClub;
+    [SerializeField] private Transform pivotY;
+    [SerializeField] private Transform pivotX;
+    [SerializeField] private Transform hitPoint;
 
     [SerializeField] private float maxForce = 20f;
     [SerializeField] private float chargeSpeed = 10f;
@@ -25,10 +27,6 @@ public class BallShooter : MonoBehaviour
             Debug.LogError("Ball NO asignada");
         }
 
-        if (golfClub == null)
-        {
-            Debug.LogError("GolfClub NO asignado");
-        }
         rb = ball.GetComponent<Rigidbody>();
 
         cam = Camera.main;
@@ -93,12 +91,9 @@ public class BallShooter : MonoBehaviour
     //Aplica impulso físico a la bola
     private void Shoot()
     {
-        Debug.Log(ball);
-        Debug.Log(golfClub);
-        Debug.Log(rb);
-
-
-        Vector3 direction = (ball.transform.position - golfClub.position).normalized;
+        Vector3 direction = pivotY.forward;
+        direction.y = 0;
+        direction.Normalize();
         rb.AddForce(direction * currentForce, ForceMode.Impulse);
     }
 
@@ -117,7 +112,7 @@ public class BallShooter : MonoBehaviour
             Vector3 dir = point - ball.transform.position;
             dir.y = 0;
 
-            golfClub.forward = dir.normalized;
+            pivotY.forward = dir.normalized;
         }
     }
 
@@ -126,11 +121,11 @@ public class BallShooter : MonoBehaviour
     {
         if (!charging)
         {
-            golfClub.localRotation = Quaternion.Lerp(golfClub.localRotation, Quaternion.identity, Time.deltaTime * 5f);
+            pivotX.localRotation = Quaternion.Lerp(pivotX.localRotation, Quaternion.identity, Time.deltaTime * 5f);
             return;
         }
 
         float angle = Mathf.Lerp(0, maxClubAngle, currentForce / maxForce);
-        golfClub.localRotation = Quaternion.Euler(-angle, 0, 0);
+        pivotX.localRotation = Quaternion.Euler(-angle, 0, 0);
     }
 }

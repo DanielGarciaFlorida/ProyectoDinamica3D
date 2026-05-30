@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 87306205}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12607956, y: 1.073, z: -0.6232405}
+  m_LocalPosition: {x: 0, y: 1.073, z: -0.68}
   m_LocalScale: {x: 0.11892277, y: 2.4866, z: 0.1642}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,7 +200,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GolfShooter
   ball: {fileID: 1112890091}
-  golfClub: {fileID: 1672383831}
+  pivotY: {fileID: 878190934}
+  pivotX: {fileID: 1672383831}
+  hitPoint: {fileID: 818834426}
   maxForce: 20
   chargeSpeed: 10
   maxClubAngle: 45
@@ -546,6 +548,69 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &818834425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818834426}
+  m_Layer: 0
+  m_Name: HitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818834426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818834425}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.034, y: 0.06, z: -0.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672383831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &878190933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878190934}
+  m_Layer: 0
+  m_Name: PivotePaloY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &878190934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878190933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.825, y: 0.482, z: -11.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1672383831}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1112890089
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672383831}
   m_Layer: 0
-  m_Name: PivotePalo
+  m_Name: PivotePalo_X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,14 +902,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672383830}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0048503135, y: -0.0039213724, z: 0.20085913, w: 0.9796003}
-  m_LocalPosition: {x: -9.718, y: 0.574, z: -11.729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 87306206}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.635, y: -0.329, z: 23.173}
+  - {fileID: 818834426}
+  m_Father: {fileID: 878190934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -852,4 +918,4 @@ SceneRoots:
   - {fileID: 631595563}
   - {fileID: 437757296}
   - {fileID: 76410153}
-  - {fileID: 1672383831}
+  - {fileID: 878190934}
