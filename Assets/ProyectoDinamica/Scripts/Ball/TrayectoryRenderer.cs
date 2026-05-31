@@ -2,17 +2,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(LineRenderer))]
-public class LineToMouse3D : MonoBehaviour
+public class TrayectoryRenderer : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     private Camera mainCamera;
 
-    [Header("Referencias")]
     [SerializeField] private BallController scriptBola;
     BallShooter shooter;
 
-    [Header("Configuración de Colisión")]
-    // Capas de los objetos que bloquearán la línea (por ejemplo: "Suelo", "Paredes", "Obstáculos")
+    
+    // Capas de los objetos que bloquearán la línea
     [SerializeField] private LayerMask capasObstaculos;
 
     void Start()
@@ -33,6 +32,7 @@ public class LineToMouse3D : MonoBehaviour
 
     void Update()
     {
+        //Si la bola está en movimiento o el shooter ha disparado, no mostramos la línea
         if ((scriptBola != null && scriptBola.IsMoving) || (shooter != null && shooter.HasShot))
         {
             lineRenderer.enabled = false;
@@ -41,11 +41,11 @@ public class LineToMouse3D : MonoBehaviour
 
         lineRenderer.enabled = true;
 
-        // 1. El origen siempre es la bola
+        //La bola como origen de la línea
         Vector3 origenBola = transform.position;
         lineRenderer.SetPosition(0, origenBola);
 
-        // 2. Buscamos la posición del mouse proyectada en el plano de la bola
+        //El ratón como final
         Vector2 posicionMouse = Mouse.current.position.ReadValue();
         Ray rayoCamara = mainCamera.ScreenPointToRay(posicionMouse);
         Plane planoHorizontal = new Plane(Vector3.up, origenBola);
@@ -55,23 +55,23 @@ public class LineToMouse3D : MonoBehaviour
         if (planoHorizontal.Raycast(rayoCamara, out distanciaDelRayo))
         {
             Vector3 puntoDestinoDeseado = rayoCamara.GetPoint(distanciaDelRayo);
-            puntoDestinoDeseado.y = origenBola.y; // Mantener eje Y
+            //La línea no se mueve en el eje Y, siempre se mantiene a la altura de la bola
+            puntoDestinoDeseado.y = origenBola.y;
 
-            // 3. EL TRUCO DE LA PARED: Calculamos la dirección y distancia hacia el mouse
             Vector3 direccion = puntoDestinoDeseado - origenBola;
             float distanciaMax = direccion.magnitude;
 
             RaycastHit choqueObstaculo;
 
-            // Lanzamos un rayo físico desde la bola hacia la posición del mouse
+            
             if (Physics.Raycast(origenBola, direccion.normalized, out choqueObstaculo, distanciaMax, capasObstaculos))
             {
-                // Si choca con una pared, el punto final será donde impactó el rayo
+                
                 lineRenderer.SetPosition(1, choqueObstaculo.point);
             }
             else
             {
-                // Si el camino está limpio, la línea llega hasta el mouse de forma normal
+                
                 lineRenderer.SetPosition(1, puntoDestinoDeseado);
             }
         }
