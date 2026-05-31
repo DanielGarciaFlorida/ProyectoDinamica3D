@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,7 +17,8 @@ public class BallShooter : MonoBehaviour
     private Rigidbody rb;
     private float currentForce;
     private bool charging;
-
+    private bool hasShot = false;
+    public bool HasShot => hasShot;
     private Camera cam;
 
     private PlayerInputActions controls;
@@ -82,10 +84,11 @@ public class BallShooter : MonoBehaviour
     // Suelta el golpe
     private void ReleaseShot(InputAction.CallbackContext context)
     {
-        Shoot();
-
+        if (hasShot) return;
         charging = false;
-        currentForce = 0;
+
+        Shoot();
+        hasShot = true;
     }
 
     //Aplica impulso físico a la bola
@@ -100,6 +103,8 @@ public class BallShooter : MonoBehaviour
     //Apunta el palo hacia la posición del ratón
     private void AimClub()
     {
+        if (hasShot) return;
+
         Vector2 mousePosition = Mouse.current.position.ReadValue();
 
         Ray ray = cam.ScreenPointToRay(mousePosition);
@@ -119,6 +124,8 @@ public class BallShooter : MonoBehaviour
     //Animación visual del palo
     private void AnimateClub()
     {
+        if(hasShot) return;
+
         if (!charging)
         {
             pivotX.localRotation = Quaternion.Lerp(pivotX.localRotation, Quaternion.identity, Time.deltaTime * 5f);

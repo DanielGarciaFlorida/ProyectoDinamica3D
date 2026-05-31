@@ -9,6 +9,7 @@ public class LineToMouse3D : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private BallController scriptBola;
+    BallShooter shooter;
 
     [Header("Configuración de Colisión")]
     // Capas de los objetos que bloquearán la línea (por ejemplo: "Suelo", "Paredes", "Obstáculos")
@@ -16,6 +17,8 @@ public class LineToMouse3D : MonoBehaviour
 
     void Start()
     {
+        shooter = FindAnyObjectByType<BallShooter>();
+
         lineRenderer = GetComponent<LineRenderer>();
         mainCamera = Camera.main;
         lineRenderer.positionCount = 2;
@@ -24,12 +27,13 @@ public class LineToMouse3D : MonoBehaviour
         if (scriptBola == null)
         {
             scriptBola = GetComponent<BallController>();
+            
         }
     }
 
     void Update()
     {
-        if (scriptBola != null && scriptBola.IsMoving)
+        if ((scriptBola != null && scriptBola.IsMoving) || (shooter != null && shooter.HasShot))
         {
             lineRenderer.enabled = false;
             return;
