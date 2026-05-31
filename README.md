@@ -1,14 +1,14 @@
 ### ProyectoDinamica3D
 
-# Mini Golf Physics
+# Mini Golf
 
 ### Realizado por
 
-**Daniel García Navarro -->** @DanielGarciaFlorida
+**Daniel García Navarro →** @DanielGarciaFlorida
 
-**Isabella McBrown García -->** @ismcga 
+**Isabella McBrown García →** @ismcga 
 
-**Adrià Rodríguez Martínez -->** @Adria2304
+**Adrià Rodríguez Martínez →** @Adria2304
 
 ## Descripción del proyecto
 
@@ -18,10 +18,13 @@ La mecánica principal consiste en controlar un palo de golf que golpea una bola
 
 El juego incorpora diferentes obstáculos físicos e interactivos que modifican el comportamiento de la bola durante el recorrido:
 
-** Molinos de viento.**
-** Trampolines.**
-** Puertas físicas mediante joints.**
-** Obstáculos y colisiones dinámicas.**
+**-Molinos de viento.**
+
+**-Trampolines.**
+
+**-Puertas físicas mediante joints.**
+
+**-Obstáculos y colisiones dinámicas.**
 
 También se implementó un sistema visual de trayectoria mediante LineRenderer y una estela dinámica utilizando Trail Renderer para mejorar la percepción visual del movimiento de la bola.
 
@@ -53,8 +56,9 @@ El jugador controla un palo de golf que rota alrededor de la bola siguiendo la p
 
 Para evitar problemas de rotaciones y orientación del palo, se decidió separar las rotaciones horizontales y verticales utilizando dos pivots independientes:
 
-** PivotY → controla la dirección horizontal.**
-** PivotX → controla la animación del swing.**
+**PivotY → controla la dirección horizontal.**
+
+**PivotX → controla la animación del swing.**
 
 La fuerza del golpe depende del tiempo que el jugador mantiene pulsado el botón de disparo.
 
@@ -103,11 +107,15 @@ La trayectoria desaparece automáticamente al realizar el disparo para evitar co
 
 Todo el proyecto se basa en físicas reales utilizando:
 
-** Rigidbody.**
-** Colliders.**
-** Triggers.**
-** Fuerzas.**
-** Detección de colisiones.**
+*-Rigidbody.*
+
+*-Colliders.*
+
+*-Triggers.*
+
+*-Fuerzas.*
+
+*-Detección de colisiones.*
 
 La bola interactúa físicamente con todos los elementos del escenario:
 
@@ -193,9 +201,12 @@ Durante el desarrollo surgieron distintos problemas relacionados principalmente 
 Para solucionar estos problemas se decidió:
 
 * Separar rotaciones horizontales y verticales mediante pivots independientes.
-* Implementar raycasts para mejorar la visualización de trayectoria.
 * Limitar la velocidad máxima de la bola.
 * Aplicar fuerzas impulsivas mediante Rigidbody.
+* Implementar raycasts para mejorar la visualización de trayectoria.
 * Utilizar triggers para los elementos interactivos.
 
 Estas soluciones permitieron conseguir un sistema de juego más estable, visualmente claro y físicamente coherente.
+
+## Enlace Gameplay
+https://floridauniversitaria-my.sharepoint.com/:v:/g/personal/adroma01_alumnatflorida_es/IQCvQEuuRu4HQrnFRBwqLUPPAfSxZ9uRjgXwI0BwtkNpF08?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=T3udKP
