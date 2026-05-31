@@ -5,7 +5,6 @@ public class ClickScene : MonoBehaviour
 {
     [Header("Nombre de la escena a cargar")]
     public string sceneName;
-
     public void LoadScene()
     {
         if (!string.IsNullOrEmpty(sceneName))
