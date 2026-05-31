@@ -12,7 +12,7 @@
 
 ## Descripción del proyecto
 
-Mini Golf Physics es un juego de minigolf desarrollado cuyo objetivo principal ha sido aplicar conceptos de dinámica, físicas reales y sistemas de colisiones dentro de un entorno 3D.
+Mini Golf es un juego de minigolf desarrollado cuyo objetivo principal ha sido aplicar conceptos de dinámica, físicas reales y sistemas de colisiones dentro de un entorno 3D.
 
 La mecánica principal consiste en controlar un palo de golf que golpea una bola mediante un sistema de apuntado con ratón y carga de fuerza.
 
